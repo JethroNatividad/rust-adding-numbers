@@ -27,5 +27,10 @@ mod tests {
 }
 
 fn main() {
-    println!("Hello, world!");
+    // count, "How many times to add? "
+    // initialize numbers vec
+    // loop count times
+    // insert to numbers vec
+    // total = get_numbers(vec)
+    // print "The total is {}"
 }
