@@ -3,6 +3,13 @@
 // Process: add all
 // Outputs: The total is n
 
+fn add_numbers(numbers: Vec<i64>) -> i64 {
+    // make a total var
+    // loop numbers
+    // add to total
+    // return total
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
