@@ -5,9 +5,14 @@
 
 fn add_numbers(numbers: Vec<i64>) -> i64 {
     // make a total var
+    let mut total: i64 = 0;
     // loop numbers
-    // add to total
+    for i in numbers {
+        // add to total
+        total += i;
+    }
     // return total
+    total
 }
 
 #[cfg(test)]
