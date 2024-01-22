@@ -1,3 +1,6 @@
+use std::io;
+use std::io::Write;
+
 // Program tha prompts how many to add, then prompts n amount of that times and add all numbers.
 // Inputs: count, n_number
 // Process: add all
@@ -23,6 +26,23 @@ mod tests {
         assert_eq!(add_numbers(vec![1, 2, 3]), 6);
         assert_eq!(add_numbers(vec![10, 10, 0, 10]), 30);
         assert_eq!(add_numbers(vec![99999, 0, 1]), 100000);
+    }
+}
+
+fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
+    loop {
+        print!("{}", prompt);
+        io::stdout().flush().unwrap();
+
+        let mut input = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
+
+        match input.trim().parse() {
+            Ok(value) => break value,
+            Err(_) => println!("Invalid input. Please try again."),
+        }
     }
 }
 
