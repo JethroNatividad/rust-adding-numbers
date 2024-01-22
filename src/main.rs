@@ -24,6 +24,7 @@ mod tests {
     #[test]
     fn test_add_numbers() {
         assert_eq!(add_numbers(vec![1, 2, 3]), 6);
+        assert_eq!(add_numbers(vec![1, 2, 3, 4, 5]), 15);
         assert_eq!(add_numbers(vec![10, 10, 0, 10]), 30);
         assert_eq!(add_numbers(vec![99999, 0, 1]), 100000);
     }
@@ -48,9 +49,18 @@ fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
 
 fn main() {
     // count, "How many times to add? "
+    let count: u64 = get_input("How many times to add? ");
     // initialize numbers vec
+    let mut numbers: Vec<i64> = vec![];
     // loop count times
-    // insert to numbers vec
-    // total = get_numbers(vec)
+    for _ in 0..count {
+        // insert to numbers vec
+        // prompt for number
+        let number: i64 = get_input("Enter a number: ");
+        numbers.push(number);
+    }
+    // total = add_numbers(vec)
+    let total: i64 = add_numbers(numbers);
     // print "The total is {}"
+    println!("The total is {}", total);
 }
