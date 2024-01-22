@@ -17,7 +17,7 @@ fn add_numbers(numbers: Vec<i64>) -> i64 {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::add_numbers;
     #[test]
     fn test_add_numbers() {
         assert_eq!(add_numbers(vec![1, 2, 3]), 6);
